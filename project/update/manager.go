@@ -1,7 +1,7 @@
 package update
 
 import (
-	"immo-currencies/project"
+	"github.com/yakoval/immo-currencies/project"
 )
 
 // Менеджер обновления валют.

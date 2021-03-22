@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/sirupsen/logrus"
 
-	"immo-currencies/project"
-	"immo-currencies/project/update"
+	"github.com/yakoval/immo-currencies/project"
+	"github.com/yakoval/immo-currencies/project/update"
 )
 
 func main() {

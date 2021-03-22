@@ -1,6 +1,6 @@
 package update
 
-import "immo-currencies/project"
+import "github.com/yakoval/immo-currencies/project"
 
 func convertToInternal(c *Currency) (currency *project.Currency, err error) {
 	rate, err := c.Rate()
