@@ -5,9 +5,9 @@
 ## Установка
 
 ### MySQL
-Для работы необходимо создать базу данных с 
+Для работы необходимо создать базу данных 
 ```Mysql
-CREATE DATABASE IF NOT EXISTS `immo-test` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE IF NOT EXISTS `immo-test` /*! возможно другое имя*/;
 USE `immo-test`;
 
 CREATE TABLE IF NOT EXISTS `cache` (
