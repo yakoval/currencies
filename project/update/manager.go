@@ -1,7 +1,7 @@
 package update
 
 import (
-	"immo-currency/project"
+	"immo-currencies/project"
 )
 
 // Менеджер обновления валют.
@@ -73,7 +73,7 @@ func (m *Manager) Work() error {
 		m.DeleteCounter++
 	}
 
-	return m.db.UpdateCountTotalCache()
+	return nil
 }
 
 func (m *Manager) update(currency *Currency, rateOld float64) error {

@@ -28,7 +28,7 @@ func StartWebServer(logger *logrus.Logger, config *WebConfig, db *Database) (*Re
 	server := &http.Server{Addr: config.Host, Handler: mux}
 
 	// Отображение списка валют.
-	mux.HandleFunc("/currencies", rs.listHandler)
+	mux.HandleFunc("/currencies/", rs.listHandler)
 
 	// Отображение одной валюты.
 	mux.HandleFunc("/currency/", rs.detailHandler)

@@ -10,10 +10,6 @@
 CREATE DATABASE IF NOT EXISTS `immo-test` /*! возможно другое имя*/;
 USE `immo-test`;
 
-CREATE TABLE IF NOT EXISTS `cache` (
-  `count_total` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 CREATE TABLE IF NOT EXISTS `currency` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
