@@ -14,10 +14,10 @@ func main() {
 	log := logrus.New()
 
 	db, err := project.Open(&conf.Database)
-	project.Check(log, err, "starting webserver")
+	project.Check(log, err, "starting DB")
 	defer func() {
 		err = db.Close()
-		project.Check(log, err, "starting webserver")
+		project.Check(log, err, "closing DB")
 	}()
 
 	restServer, err := project.StartWebServer(log, &conf.Web, db)

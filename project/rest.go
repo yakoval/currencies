@@ -33,9 +33,6 @@ func StartWebServer(logger *logrus.Logger, config *WebConfig, db *Database) (*Re
 	// Отображение одной валюты.
 	mux.HandleFunc("/currency/", rs.detailHandler)
 
-	// Обработчик обращений к статическим данным.
-	mux.Handle("/static/", rs.staticHandler())
-
 	rs.server = server
 
 	go func() {
@@ -90,13 +87,6 @@ func (rs *RestServer) listHandler(w http.ResponseWriter, r *http.Request) {
 
 	err = rs.writeDataToResponse(currencies, w)
 	Check(rs.logger, err, "output currencies")
-}
-
-func (rs *RestServer) staticHandler() http.Handler {
-	return http.StripPrefix(
-		"/static/",
-		http.FileServer(http.Dir("./project/rest/static")),
-	)
 }
 
 func (rs *RestServer) writeDataToResponse(data interface{}, w http.ResponseWriter) error {
