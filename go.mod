@@ -1,4 +1,4 @@
-module github.com/yakoval/immo-currencies
+module github.com/yakoval/currencies
 
 go 1.16
 

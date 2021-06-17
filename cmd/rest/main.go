@@ -6,7 +6,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/yakoval/immo-currencies/project"
+	"github.com/yakoval/currencies/project"
 )
 
 func main() {
