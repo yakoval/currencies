@@ -6,11 +6,12 @@ import (
 
 	"github.com/sirupsen/logrus"
 
+	"github.com/yakoval/currencies/config"
 	"github.com/yakoval/currencies/project"
 )
 
 func main() {
-	conf := project.NewConfig()
+	conf := config.NewConfig()
 	log := logrus.New()
 
 	db, err := project.Open(&conf.Database)

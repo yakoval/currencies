@@ -2,18 +2,19 @@ package project
 
 import (
 	"database/sql"
+	"github.com/yakoval/currencies/config"
 	"strconv"
 
 	_ "github.com/go-sql-driver/mysql"
 )
 
-// Config приложения
+// Database Config приложения
 type Database struct {
 	conn *sql.DB
 }
 
-// NewConfig - создание новой конфигурации приложения на основе файла .env
-func Open(config *DatabaseConfig) (*Database, error) {
+// Open - создание новой конфигурации приложения на основе файла .env
+func Open(config *config.DatabaseConfig) (*Database, error) {
 	db, err := sql.Open("mysql", config.Login+":@("+config.Host+":"+strconv.Itoa(int(config.Port))+")/"+config.Name)
 	if err != nil {
 		return nil, err
@@ -27,7 +28,7 @@ func (db *Database) Close() error {
 	return db.conn.Close()
 }
 
-// Добавляет курс валюты.
+// Insert Добавляет курс валюты.
 func (db *Database) Insert(currency *Currency) error {
 	_, err := db.conn.Exec("INSERT INTO currency (`name`, rate, insert_dt) VALUES (?, ?, NOW())", currency.Name, currency.Rate)
 	return err

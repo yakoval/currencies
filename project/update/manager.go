@@ -1,10 +1,11 @@
 package update
 
 import (
+	"github.com/yakoval/currencies/config"
 	"github.com/yakoval/currencies/project"
 )
 
-// Менеджер обновления валют.
+// Manager - Менеджер обновления валют.
 type Manager struct {
 	// Счетчик валют, полученных из внешнего источника.
 	ReadCounter int
@@ -24,7 +25,7 @@ type Manager struct {
 }
 
 // Создает новый менеджер обновления валют.
-func NewUpdater(db *project.Database, conf *project.UpdaterConfig) (*Manager, error) {
+func NewUpdater(db *project.Database, conf *config.UpdaterConfig) (*Manager, error) {
 	m := &Manager{
 		db: db,
 		externalSource: &externalSource{

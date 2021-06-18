@@ -3,6 +3,7 @@ package project
 import (
 	"database/sql"
 	"encoding/json"
+	config2 "github.com/yakoval/currencies/config"
 	"net/http"
 	"strconv"
 
@@ -12,13 +13,13 @@ import (
 // RestServer предоставляет http-эндпоинты.
 type RestServer struct {
 	server *http.Server
-	config *WebConfig
+	config *config2.WebConfig
 	logger *logrus.Logger
 	db     *Database
 }
 
 // StartWebServer запускает REST-сервер.
-func StartWebServer(logger *logrus.Logger, config *WebConfig, db *Database) (*RestServer, error) {
+func StartWebServer(logger *logrus.Logger, config *config2.WebConfig, db *Database) (*RestServer, error) {
 	rs := &RestServer{
 		config: config,
 		logger: logger,
