@@ -64,7 +64,7 @@ func NewConfig() *Config {
 	c.Database.Port = env.Port("DB_PORT", 3306)
 	c.Database.Login = env.Get("DB_LOGIN", "root")
 	c.Database.Password = env.Get("DB_PASSWORD", "")
-	c.Database.Name = env.Get("DB_NAME", "immo-test")
+	c.Database.Name = env.Get("DB_NAME", "currency")
 
 	c.Web.Host = env.Get("WEB_SERVER_HOST", "127.0.0.1:8081")
 	c.Web.ByPages = env.Bool("REST_BY_PAGES", true)
