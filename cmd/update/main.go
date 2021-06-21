@@ -31,9 +31,9 @@ func main() {
 
 	log.WithFields(logrus.Fields{
 		"stage":    "updating currencies",
-		"read":     &updater.ReadCounter,
-		"inserted": &updater.InsertCounter,
-		"updated":  &updater.UpdateCounter,
-		"deleted":  &updater.DeleteCounter,
+		"read":     updater.ReadCounter,
+		"inserted": updater.InsertCounter,
+		"updated":  updater.UpdateCounter,
+		"deleted":  updater.DeleteCounter,
 	}).Info("finished!")
 }
